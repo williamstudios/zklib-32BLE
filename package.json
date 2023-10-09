@@ -1,6 +1,6 @@
 {
   "name": "zklib-32ble",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JavaScript module for ZKLib biometric devices",
   "main": "zklib.js",
   "scripts": {
