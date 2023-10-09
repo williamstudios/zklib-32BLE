@@ -614,7 +614,7 @@ class ZKLibTCP {
   
   async setUser(uid, userid, name, password, role = 0, cardno = 0) {
     try{
-    if (
+    /*if (
       parseInt(uid) === 0 ||
       parseInt(uid) > 3000 ||
         userid.length > 9 ||
@@ -623,16 +623,16 @@ class ZKLibTCP {
         cardno.length > 10
         ) {
           return false;
-        }
+        }*/
 
-    const command_string = Buffer.alloc(72);
-    command_string.writeUInt16LE(uid, 0);
-    command_string.writeUInt16LE(role, 2);
-    command_string.write(password, 3, 8);
-    command_string.write(name, 11, 24);
-    command_string.writeUInt32LE(cardno, 35);
-    command_string.writeUInt32LE(0, 40);
-    command_string.write(userid ? userid.toString(9) : '', 48);
+        const command_string = Buffer.alloc(72);
+        command_string.writeUInt32LE(uid, 0);
+        command_string.writeUInt16LE(role, 2);
+        command_string.write(password, 3, 8);
+        command_string.write(name, 11, 24);
+        command_string.writeUInt32LE(cardno, 35);
+        command_string.writeUInt32LE(0, 40);
+        command_string.write(userid ? userid.toString(9) : '', 48);
 
     //console.log(command_string);
     return await this.executeCmd(COMMANDS.CMD_USER_WRQ, command_string);
