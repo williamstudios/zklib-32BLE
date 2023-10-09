@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/merouanezouaid/zklib-js.git"
+    "url": "git+https://github.com/williamstudios/zklib-32LE/blob/main/zklibtcp.js"
   },
   "keywords": [
     "zkteco",
@@ -21,10 +21,10 @@
   "author": "merouanezouaid",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/merouanezouaid/zklib-js/issues"
+    "url": "https://github.com/williamstudios/zklib-32LE/issues"
   },
-  "homepage": "https://github.com/merouanezouaid/zklib-js#readme",
+  "homepage": "https://github.com/williamstudios/zklib-32LE/blob/main/zklibtcp.js",
   "dependencies": {
-    "zklib-js": "^1.0.0"
+    "zklib-js": "^1.0.1"
   }
 }
