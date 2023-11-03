@@ -445,6 +445,23 @@ class ZKLibTCP {
     return await this.executeCmd(COMMANDS.CMD_FREE_DATA, '')
   }
 
+  async finger() {
+    let results = await this.executeCmd(COMMANDS.CMD_USERTEMP_RRQ, '');
+    const RECORD_PACKET_SIZE = 40;
+    const recordData = results;  // data es el buffer que contiene los registros
+    const numRecords = Math.floor(recordData.length / RECORD_PACKET_SIZE);
+
+    const records = [];
+
+    for (let i = 0; i < numRecords; i++) {
+      const record = recordData.slice(i * RECORD_PACKET_SIZE, (i + 1) * RECORD_PACKET_SIZE);
+      records.push(record);
+    }
+
+    console.log(records)
+
+  } 
+
   async disableDevice() {
     return await this.executeCmd(COMMANDS.CMD_DISABLEDEVICE, REQUEST_DATA.DISABLE_DEVICE)
   }
@@ -662,13 +679,12 @@ async getAttendanceSize() {
     this.replyId++;
     
     try{
-      const buf = createTCPHeader(COMMANDS.CMD_REG_EVENT, this.sessionId, this.replyId, Buffer.from([0x01, 0x00, 0x00, 0x00]))
+      const buf = createTCPHeader(COMMANDS.CMD_REG_EVENT, this.sessionId, this.replyId, Buffer.from([0x01, 0x00, 0x00, 0x00, 0x0100]))
   
       this.socket.write(buf, null, err => {
       })
   
       this.socket.listenerCount('data') === 0 && this.socket.on('data', (data) => {
-  
         if (!checkNotEventTCP(data)) return;
         if (data.length > 16) {
           cb(decodeRecordRealTimeLog52(data))

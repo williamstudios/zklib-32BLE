@@ -25,6 +25,6 @@
   },
   "homepage": "https://github.com/williamstudios/zklib-32LE/blob/main/zklibtcp.js",
   "dependencies": {
-    "zklib-js": "^1.0.1"
+    "zklib-js": "^2.0.1"
   }
 }

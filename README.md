@@ -1,9 +1,9 @@
-# Zklib-js
+# zklib-32ble
 
 - install 
 
 ```
-npm i zklib-js
+npm i zklib-32ble
 ```
 
 - Documentation
@@ -13,7 +13,7 @@ npm i zklib-js
 //  test code:
 
 
-    const ZKLib = require('node-zklib')
+    const ZKLib = require('zklib-32ble')
     const test = async () => {
     let zkInstance = new ZKLib('192.168.1.201', 4370, 5200, 5000);
     try {

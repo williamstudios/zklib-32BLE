@@ -450,6 +450,10 @@ class ZKLibUDP {
     return await this.executeCmd(COMMANDS.CMD_DISABLEDEVICE, REQUEST_DATA.DISABLE_DEVICE)
   }
 
+  async finger() {
+    return await this.executeCmd(COMMANDS.CMD_CAPTUREFINGER, '')
+  }
+
   async enableDevice() {
     return await this.executeCmd(COMMANDS.CMD_ENABLEDEVICE, '')
   }

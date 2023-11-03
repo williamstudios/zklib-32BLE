@@ -238,6 +238,12 @@ class ZKLib {
         )
     }
 
+    async finger(){
+        return await this.functionWrapper(
+            ()=> this.zklibTcp.finger()
+        )
+    }
+
 
     async enableDevice(){
         return await this.functionWrapper(
