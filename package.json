@@ -1,6 +1,6 @@
 {
   "name": "zklib-32ble",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "JavaScript module for ZKLib biometric devices",
   "main": "zklib.js",
   "scripts": {
@@ -24,6 +24,5 @@
     "url": "https://github.com/williamstudios/zklib-32LE/issues"
   },
   "homepage": "https://github.com/williamstudios/zklib-32LE/blob/main/zklibtcp.js",
-  "dependencies": {
-  }
+  "dependencies": {}
 }
