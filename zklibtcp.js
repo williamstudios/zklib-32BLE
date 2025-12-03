@@ -679,7 +679,7 @@ async getAttendanceSize() {
     this.replyId++;
     
     try{
-      const buf = createTCPHeader(COMMANDS.CMD_REG_EVENT, this.sessionId, this.replyId, Buffer.from([0x01, 0x00, 0x00, 0x00, 0x0100]))
+      const buf = createTCPHeader(COMMANDS.CMD_REG_EVENT, this.sessionId, this.replyId, REQUEST_DATA.GET_REAL_TIME_EVENT)
   
       this.socket.write(buf, null, err => {
       })
